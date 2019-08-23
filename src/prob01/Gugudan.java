@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Gugudan {
 	
 	static int resultNumber = 0;
-	
+	static int answer =0;
 	public static void main( String[] args ) {
 		int l = randomize( 1, 9 );
 		int r = randomize( 1, 9 );
@@ -36,13 +36,21 @@ public class Gugudan {
 		//
 		//  이 부분에 적당한 코드를 작성합니다.  
 		//
+		answer = s.nextInt();
+		if(answer == resultNumber) {
+			System.out.println("정답");
+		}else {
+			System.out.println("오답");
+		}
 	}
-
+	
+	//구구단 문제식
 	private static int randomize( int lNum, int rNum ) {
         int random = (int) ( Math.random() * rNum ) + lNum;
         return random;
 	}
 	
+	//구구단 랜덤 답
 	private static int[] randomizeAnswers() {
 
 		final int COUNT_ANSWER_NUMBER = 9;
@@ -57,7 +65,7 @@ public class Gugudan {
 	        
 	        boolean evaluted = false;
 	        for( int i = 0; i < occupied; i++ ) {
-	        	if( /* 이 부분에 적당 조건의 코드를 입력 합니다. */ ) {
+	        	if( boardNumbers[i] == answer ) {
 	        		evaluted = true;
 	        		break;
 	        	}
